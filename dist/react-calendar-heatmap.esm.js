@@ -758,7 +758,7 @@ var CalendarHeatmap = /*#__PURE__*/function (_React$Component) {
     value: function renderWeekdayLabels() {
       var _this6 = this;
 
-      if (!this.latestProps.showWeekdayLabels) {
+      if (!this.props.showWeekdayLabels) {
         return null;
       }
 
@@ -849,7 +849,6 @@ CalendarHeatmap.defaultProps = {
   gutterSize: 1,
   horizontal: true,
   showMonthLabels: true,
-  showWeekdayLabels: false,
   showOutOfRangeDays: false,
   tooltipDataAttrs: null,
   titleForValue: null,

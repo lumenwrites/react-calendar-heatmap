@@ -766,7 +766,7 @@
       value: function renderWeekdayLabels() {
         var _this6 = this;
 
-        if (!this.latestProps.showWeekdayLabels) {
+        if (!this.props.showWeekdayLabels) {
           return null;
         }
 
@@ -857,7 +857,6 @@
     gutterSize: 1,
     horizontal: true,
     showMonthLabels: true,
-    showWeekdayLabels: false,
     showOutOfRangeDays: false,
     tooltipDataAttrs: null,
     titleForValue: null,
