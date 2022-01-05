@@ -768,14 +768,14 @@ var CalendarHeatmap = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      var weekdayLabels = [].concat(_toConsumableArray(this.latestProps.weekdayLabels.slice(1)), [this.latestProps.weekdayLabels[0]]);
+      var weekdayLabels = [].concat(_toConsumableArray(this.props.weekdayLabels.slice(1)), [this.props.weekdayLabels[0]]);
       return weekdayLabels.map(function (weekdayLabel, dayIndex) {
         var _this6$getWeekdayLabe = _this6.getWeekdayLabelCoordinates(dayIndex),
             _this6$getWeekdayLabe2 = _slicedToArray(_this6$getWeekdayLabe, 2),
             x = _this6$getWeekdayLabe2[0],
             y = _this6$getWeekdayLabe2[1];
 
-        var cssClasses = "".concat(_this6.latestProps.horizontal ? '' : "".concat(CSS_PSEDUO_NAMESPACE, "small-text"), " ").concat(CSS_PSEDUO_NAMESPACE, "weekday-label"); // eslint-disable-next-line no-bitwise
+        var cssClasses = "".concat(_this6.props.horizontal ? '' : "".concat(CSS_PSEDUO_NAMESPACE, "small-text"), " ").concat(CSS_PSEDUO_NAMESPACE, "weekday-label"); // eslint-disable-next-line no-bitwise
 
         return dayIndex & 1 ? /*#__PURE__*/React__default["default"].createElement("text", {
           key: "".concat(x).concat(y),
