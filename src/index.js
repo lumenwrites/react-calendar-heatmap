@@ -299,12 +299,11 @@ class CalendarHeatmap extends React.Component {
     if (!this.props.showWeekdayLabels) {
       return null;
     }
-
-    const weekdayLabels = [...this.props.weekdayLabels.slice(1), this.props.weekdayLabels[0]];
-
-    return weekdayLabels.map((weekdayLabel, dayIndex) => {
+    return this.props.weekdayLabels.map((weekdayLabel, dayIndex) => {
       const [x, y] = this.getWeekdayLabelCoordinates(dayIndex);
-      const cssClasses = `${this.props.horizontal ? '' : `${CSS_PSEDUO_NAMESPACE}small-text`} ${CSS_PSEDUO_NAMESPACE}weekday-label`;
+      const cssClasses = `${
+        this.props.horizontal ? '' : `${CSS_PSEDUO_NAMESPACE}small-text`
+      } ${CSS_PSEDUO_NAMESPACE}weekday-label`;
       // eslint-disable-next-line no-bitwise
       return dayIndex & 1 ? (
         <text key={`${x}${y}`} x={x} y={y} className={cssClasses}>
@@ -313,7 +312,7 @@ class CalendarHeatmap extends React.Component {
       ) : null;
     });
   }
-
+  
   render() {
     this.valueCache = this.getValueCache(this.props);
 

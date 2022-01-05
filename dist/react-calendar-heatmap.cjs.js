@@ -152,20 +152,8 @@ function _slicedToArray(arr, i) {
   return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
 }
 
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
 function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 function _iterableToArrayLimit(arr, i) {
@@ -213,10 +201,6 @@ function _arrayLikeToArray(arr, len) {
   for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
 
   return arr2;
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 function _nonIterableRest() {
@@ -768,8 +752,7 @@ var CalendarHeatmap = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      var weekdayLabels = [].concat(_toConsumableArray(this.props.weekdayLabels.slice(1)), [this.props.weekdayLabels[0]]);
-      return weekdayLabels.map(function (weekdayLabel, dayIndex) {
+      return this.props.weekdayLabels.map(function (weekdayLabel, dayIndex) {
         var _this6$getWeekdayLabe = _this6.getWeekdayLabelCoordinates(dayIndex),
             _this6$getWeekdayLabe2 = _slicedToArray(_this6$getWeekdayLabe, 2),
             x = _this6$getWeekdayLabe2[0],
