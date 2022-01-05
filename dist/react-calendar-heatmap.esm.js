@@ -491,13 +491,13 @@ var CalendarHeatmap = /*#__PURE__*/function (_React$Component) {
     key: "getNumEmptyDaysAtStart",
     value: function getNumEmptyDaysAtStart() {
       // return this.getStartDate().getDay();
-      return this.latestProps.firstWeekdayMonday ? (this.getStartDate().getDay() || 7) - 1 : this.getStartDate().getDay();
+      return (this.getStartDate().getDay() || 7) - 1;
     }
   }, {
     key: "getNumEmptyDaysAtEnd",
     value: function getNumEmptyDaysAtEnd() {
       // return DAYS_IN_WEEK - 1 - this.getEndDate().getDay();
-      return DAYS_IN_WEEK - 1 - (this.latestProps.firstWeekdayMonday ? (this.getEndDate().getDay() || 7) - 1 : this.getEndDate().getDay());
+      return DAYS_IN_WEEK - 1 - ((this.getEndDate().getDay() || 7) - 1);
     }
   }, {
     key: "getWeekCount",
@@ -762,7 +762,7 @@ var CalendarHeatmap = /*#__PURE__*/function (_React$Component) {
         return null;
       }
 
-      var weekdayLabels = this.latestProps.firstWeekdayMonday ? [].concat(_toConsumableArray(this.latestProps.weekdayLabels.slice(1)), [this.latestProps.weekdayLabels[0]]) : this.latestProps.weekdayLabels;
+      var weekdayLabels = [].concat(_toConsumableArray(this.latestProps.weekdayLabels.slice(1)), [this.latestProps.weekdayLabels[0]]);
       return weekdayLabels.map(function (weekdayLabel, dayIndex) {
         var _this6$getWeekdayLabe = _this6.getWeekdayLabelCoordinates(dayIndex),
             _this6$getWeekdayLabe2 = _slicedToArray(_this6$getWeekdayLabe, 2),
@@ -833,8 +833,6 @@ CalendarHeatmap.propTypes = {
   // An array with 12 strings representing the text from janurary to december
   weekdayLabels: PropTypes.arrayOf(PropTypes.string),
   // An array with 7 strings representing the text from Sun to Sat
-  firstWeekdayMonday: PropTypes.bool,
-  // whether to start the week from Monday instead of Sunday
   onClick: PropTypes.func,
   // callback function when a square is clicked
   onMouseOver: PropTypes.func,
@@ -855,7 +853,6 @@ CalendarHeatmap.defaultProps = {
   showOutOfRangeDays: false,
   tooltipDataAttrs: null,
   titleForValue: null,
-  firstWeekdayMonday: false,
   classForValue: function classForValue(value) {
     return value ? 'color-filled' : 'color-empty';
   },
